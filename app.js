@@ -1,9 +1,9 @@
 document.querySelectorAll(".tab").forEach(tab => {
     tab.addEventListener("click", function(){
-        document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("tab-active"))
-        tab.classList.add("tab-active")
+        document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("tab-active"));
+        tab.classList.add("tab-active");
 
-        let url = ""
+        let url = "";
         if(tab.id == "tab1"){
             url = "https://json-api.uz/api/project/fn37/products"
         } 
@@ -21,12 +21,10 @@ document.querySelectorAll(".tab").forEach(tab => {
         elMain.classList.add("hidden")
 
         fetch(url)
-        .then((result) =>{
-            return result.json()
-        })
-        .then((result) =>{
-            render(result)
-        })
+            .then((result) => result.json())
+            .then((result) => {
+                render(result);
+            })
     })
 })
 
